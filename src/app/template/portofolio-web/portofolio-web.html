@@ -1,7 +1,14 @@
-<mat-drawer-container class="example-container" [hasBackdrop]="true">
+<mat-drawer-container [hasBackdrop]="true">
     <mat-drawer #drawer (opened)="true" [mode]="'over'">I'm a drawer</mat-drawer>
     <mat-drawer-content>
-        <app-portofolio-header (onOpenMenu)="onOpenMenu(drawer)"/>
+        <app-portofolio-subheader />
+        <div class="custom-navbar">
+            <div class="image-banner-wrapper">
+                <img src="assets/icon/buildings/school-1.jpg" class="banner"
+                    alt="Photo by Rodion Kutsaiev" />
+            </div>
+            <app-portofolio-header (onOpenMenu)="onOpenMenu(drawer)" />
+        </div>
         <router-outlet />
         <app-portofolio-footer />
     </mat-drawer-content>
