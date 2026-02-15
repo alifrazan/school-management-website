@@ -1,1 +1,8 @@
-<router-outlet />
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+    <mat-drawer #drawer (opened)="true" [mode]="'over'">I'm a drawer</mat-drawer>
+    <mat-drawer-content>
+        <app-portofolio-header (onOpenMenu)="onOpenMenu(drawer)"/>
+        <router-outlet />
+        <app-portofolio-footer />
+    </mat-drawer-content>
+</mat-drawer-container>

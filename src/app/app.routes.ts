@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { PortofolioWeb } from '@template/portofolio-web/portofolio-web';
 import { NotFound } from './pages/not-found/not-found';
 import { Admin } from './pages/template/admin/admin';
-import { Login } from './pages/login/login';
 
 
 /**
@@ -21,14 +20,8 @@ import { Login } from './pages/login/login';
  */
 
 export const routes: Routes = [
-    { path: '', component: PortofolioWeb, title: 'Portofolio Web' },
-    { path: 'admin', component: Admin, title:'Portofolio Web | Admin' },
-    {
-        path: 'login',
-        component: Login,
-        title: 'Portofolio Web | Admin'
-        // loadComponent: () => import('./pages/login/login'),
-    },
+    { path: '', component: PortofolioWeb, title: 'School Management System' },
+    { path: 'admin', component: Admin, title:'Admin | School Management System' },
+    { path: 'login', title: 'Login | School Management System', loadComponent: () => import('./pages/login/login').then(m => m.Login) },
     { path: '**', component: NotFound },
-
 ];
